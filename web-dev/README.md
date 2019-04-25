@@ -1,4 +1,4 @@
-# projects2
+# web-dev
 
 ## Project setup
 ```
