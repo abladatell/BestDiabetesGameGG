@@ -1,4 +1,4 @@
-Character:
+Character: 
 	- Type 1 diabetic
 	- Suffering Diabetic Ketoacidosis
 
