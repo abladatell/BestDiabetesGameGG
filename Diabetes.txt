@@ -1,0 +1,48 @@
+Character:
+	- Type 1 diabetic
+	- Suffering Diabetic Ketoacidosis
+
+
+High blood sugar happens when:
+	*not enough insulin in body
+	*eat too much
+	*not enough exercise
+High blood sugar symptoms
+	*Very thirsty
+	*Tired
+	*Blurry vision,
+	*Rapid weight lost
+	*Constant bathroom breaks
+	*Sick to stomach
+	*Faint
+	*Throwing up
+How to treat high blood sugar:
+	*Insulin
+
+Low blood sugar happens when:
+	*Take too much insulin
+	*Missing a meal
+	*Delaying a meal
+	*Exercising too much
+	*Drinking too much alchohol
+
+Low blood sugar symptoms:
+	*Shaky
+	*Mixed Up
+	*Unhappy
+	*Hungry
+	*Tired
+	*Sweaty
+	*Headache
+	*Confused
+	*Sleepy
+	*Irritable
+	*Pass out
+	*Seizure
+How to treat low blood sugar:
+	*hard cand
+	*sugar-seetened soda
+	*Orange Juice
+	*Milk
+	*Glucose gel
+	*Should eat a small snack after treating a low blood sugar reaction if next meal is in >30 minutes
