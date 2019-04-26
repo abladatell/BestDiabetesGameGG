@@ -5719,6 +5719,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 457145425}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1196581410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1196581411}
+  m_Layer: 0
+  m_Name: PlayerColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1196581411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196581410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1630956448}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1200944543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4611710319018632, guid: 163abcbe3e19ae64691aedf8227e97f2,
@@ -7444,6 +7474,12 @@ PrefabInstance:
     - {fileID: 114495190703192878, guid: 995a3d839a607bc49b88993c83f2ff6c, type: 3}
     - {fileID: 114396766600565974, guid: 995a3d839a607bc49b88993c83f2ff6c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 995a3d839a607bc49b88993c83f2ff6c, type: 3}
+--- !u!4 &1630956448 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4752084987746710, guid: 995a3d839a607bc49b88993c83f2ff6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630956447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1636036752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4611710319018632, guid: 163abcbe3e19ae64691aedf8227e97f2,
