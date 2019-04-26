@@ -1,9 +1,20 @@
 <template>
-    <h1>Diabetes Game</h1>
+    <div>
+        <app-home></app-home>
+        <nav-bar></nav-bar>
+    </div>
 </template>
 
 <script>
+import Home from "./components/Home.vue";
+import NavBar from "./components/NavBar.vue";
 
+export default {
+    components: {
+        appHome: Home,
+        navBar: NavBar
+    }
+}
 </script>
 
 
@@ -15,16 +26,4 @@ body {
   background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%); /* w3c */
 }
 
-@font-face {
-    font-family: "SEGA LOGO FONT";
-    font-style: normal;
-    font-weight: normal;
-    src: local("SEGA LOGO FONT"), url("./assets/SEGA.woff") format("woff");
-}
-
-h1 {
-    font-family: "SEGA LOGO FONT";
-    font-weight: 200;
-    color: #0ccac4;
-}
 </style>
