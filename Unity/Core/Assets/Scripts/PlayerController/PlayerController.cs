@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CharController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     [SerializeField]
     float moveSpeed = 4f;
@@ -55,8 +55,20 @@ public class CharController : MonoBehaviour {
             {
                 continue;
             }
-            int Damage = 2;
-            c.SendMessageUpwards("takeDamage",Damage);
+            int damage = 0;
+            switch (col.name)
+            {
+                case "MeleeCollider":
+                    damage = 2;
+                    break;
+                case "LongCollider":
+                    damage = 3;
+                    break;
+                default:
+                    Debug.Log("Collider Unknown");
+                    break;
+            }
+            c.SendMessageUpwards("takeDamage",damage);
         }
     }
 

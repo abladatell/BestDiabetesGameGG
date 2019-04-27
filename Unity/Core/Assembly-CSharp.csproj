@@ -65,7 +65,7 @@
     <Compile Include="Assets\Scripts\EffectsController\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\EffectsController\LightFollow.cs" />
     <Compile Include="Assets\Scripts\EnemyController\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\PlayerController\CharController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Devin/Documents/GitHub/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
