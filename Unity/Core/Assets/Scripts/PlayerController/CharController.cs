@@ -27,7 +27,6 @@ public class CharController : MonoBehaviour {
         {
             launchAttack(attackHitBoxes[1]);
         }
-
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Move();
@@ -56,8 +55,8 @@ public class CharController : MonoBehaviour {
             {
                 continue;
             }
-            float Damage = 0f;   
-            Debug.Log(c.name);
+            int Damage = 2;
+            c.SendMessageUpwards("takeDamage",Damage);
         }
     }
 
