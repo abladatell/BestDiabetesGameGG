@@ -7,6 +7,8 @@ public class CharController : MonoBehaviour {
 
     Vector3 forward, right;
 
+    public Collider[] attackHitBoxes;
+
 	// Use this for initialization
 	void Start () {
         forward = Camera.main.transform.forward;
@@ -17,9 +19,20 @@ public class CharController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.anyKey)
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            launchAttack(attackHitBoxes[0]);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            launchAttack(attackHitBoxes[1]);
+        }
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
             Move();
-	}
+        }
+    }
 
     void Move()
     {
@@ -32,6 +45,20 @@ public class CharController : MonoBehaviour {
         transform.forward = heading;
         transform.position += rightMovement;
         transform.position += upMovement;
+    }
+
+    private void launchAttack(Collider col)
+    {
+        var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
+        foreach(Collider c in cols)
+        {
+            if (c.transform.parent.parent == transform)
+            {
+                continue;
+            }
+            float Damage = 0f;   
+            Debug.Log(c.name);
+        }
     }
 
 }

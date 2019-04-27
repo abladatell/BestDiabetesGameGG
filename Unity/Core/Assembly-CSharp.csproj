@@ -62,9 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\CharController.cs" />
-    <Compile Include="Assets\Scripts\LightFollow.cs" />
+    <Compile Include="Assets\Scripts\EffectsController\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\EffectsController\LightFollow.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\CharController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Devin/Documents/GitHub/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
