@@ -1,14 +1,15 @@
 <template>
     <div>
-        <app-home></app-home>
+        <router-view/>
         <nav-bar></nav-bar>
     </div>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
+import Home from "./components/pages/Home.vue";
 import NavBar from "./components/NavBar.vue";
 
+//TODO: animations in transitions
 export default {
     components: {
         appHome: Home,

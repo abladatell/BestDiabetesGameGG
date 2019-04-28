@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h1>Diabetes Home</h1>
+        <h1>Diabetes Link1</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Home",
+    name: "Link1",
     
 };
 </script>
@@ -16,7 +16,7 @@ export default {
     font-family: "SEGA LOGO FONT";
     font-style: normal;
     font-weight: normal;
-    src: local("SEGA LOGO FONT"), url("../assets/SEGA.woff") format("woff");
+    src: local("SEGA LOGO FONT"), url("../../assets/SEGA.woff") format("woff");
 }
 
 h1 {
