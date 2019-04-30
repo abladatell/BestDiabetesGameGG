@@ -122,3 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  attackHitBoxes:
+  - {fileID: 0}
+  - {fileID: 0}
