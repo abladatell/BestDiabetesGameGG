@@ -12,7 +12,8 @@
     "bootstrap-vue": "^2.0.0-rc.19",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.6",
+    "vue-unity-webgl": "^1.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",

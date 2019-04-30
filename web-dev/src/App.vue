@@ -1,19 +1,23 @@
 <template>
     <div>
-        <router-view/>
         <nav-bar></nav-bar>
+        <router-view/>
+    
     </div>
 </template>
 
 <script>
 import Home from "./components/pages/Home.vue";
 import NavBar from "./components/NavBar.vue";
+import Game from "./components/Game.vue";
+
 
 //TODO: animations in transitions
 export default {
     components: {
         appHome: Home,
-        navBar: NavBar
+        navBar: NavBar,
+        game: Game
     }
 }
 </script>
