@@ -9,7 +9,11 @@
         <b-navbar-nav>
           <b-nav-item to="/" active-class="active" exact class="items" id="home">Home</b-nav-item>
           <b-nav-item to="/link1" active-class="active" class="items">Link</b-nav-item>
+<<<<<<< HEAD
           <b-nav-item to="/link3" class="items">Link3</b-nav-item>
+=======
+          <b-nav-item href="/game" class="items">Link3</b-nav-item>
+>>>>>>> f740980a3ddd7fa830109fbc3dfa10595f1aaa3c
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
