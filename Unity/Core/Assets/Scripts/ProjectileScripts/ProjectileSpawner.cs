@@ -12,6 +12,8 @@ public class ProjectileSpawner : MonoBehaviour
     public float shootRate = 0f;
     public float shootForce = 0f;
     private float timeElapsed = 0f;
+    public bool isPlayer = false;
+    public bool isAggro = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class ProjectileSpawner : MonoBehaviour
 
         rbody.velocity = new Vector3(h, v, 0);
 
-        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) {
+        if (isPlayer && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) || !isPlayer && isAggro) {
             if(timeElapsed > shootRate)
             {
                 GameObject go = (GameObject) Instantiate(
