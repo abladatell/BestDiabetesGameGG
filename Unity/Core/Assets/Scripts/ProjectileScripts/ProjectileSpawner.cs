@@ -11,7 +11,7 @@ public class ProjectileSpawner : MonoBehaviour
     public Transform gun;
     public float shootRate = 0f;
     public float shootForce = 0f;
-    private float shootRateTimeStamp = 0f;
+    private float timeElapsed = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class ProjectileSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -29,13 +29,19 @@ public class ProjectileSpawner : MonoBehaviour
         rbody.velocity = new Vector3(h, v, 0);
 
         if (Input.GetKey(KeyCode.Space)) {
-            if(Time.time > shootRateTimeStamp)
+            if(timeElapsed > shootRate)
             {
                 GameObject go = (GameObject) Instantiate(
                     bullet, gun.position, gun.rotation);
                 go.GetComponent<Rigidbody>().AddForce(gun.forward * shootForce);
-                shootRateTimeStamp = Time.time + shootRate;
+                timeElapsed = 0;
             }
+        }
+
+        timeElapsed += Time.deltaTime;
+        if(timeElapsed > 2 * shootRate)
+        {
+            timeElapsed = 2 * shootRate;
         }
     }
 }
