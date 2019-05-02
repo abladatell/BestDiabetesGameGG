@@ -28,7 +28,7 @@ public class ProjectileSpawner : MonoBehaviour
 
         rbody.velocity = new Vector3(h, v, 0);
 
-        if (Input.GetKey(KeyCode.Space)) {
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) {
             if(timeElapsed > shootRate)
             {
                 GameObject go = (GameObject) Instantiate(
