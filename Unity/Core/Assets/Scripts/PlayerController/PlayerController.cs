@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
     float moveSpeed = 4f;
 
     Vector3 forward, right;
+    Vector3 lookPos;
 
     public Collider[] attackHitBoxes;
 
@@ -31,6 +32,20 @@ public class PlayerController : MonoBehaviour {
         {
             Move();
         }
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, 100))
+        {
+            lookPos = hit.point;
+        }
+
+        Vector3 lookDir = lookPos - transform.position;
+        lookDir.y = 0;
+
+        transform.LookAt(transform.position + lookDir, Vector3.up);
     }
 
     void Move()

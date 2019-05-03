@@ -67,7 +67,6 @@
     <Compile Include="Assets\Scripts\EnemyController\EnemyController.cs" />
     <Compile Include="Assets\Scripts\EnvironmentScripts\WallCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\ProjectileScripts\GunRotation.cs" />
     <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileCollisonDetection.cs" />
     <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileDespawner.cs" />
     <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileSpawner.cs" />
