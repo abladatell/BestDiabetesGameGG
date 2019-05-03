@@ -15,9 +15,11 @@ public class EnemyController : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
-
+        if(health <= 0){
+            Destroy(gameObject, 0);
+        }
     }
 
     public void takeDamage(int damage)
