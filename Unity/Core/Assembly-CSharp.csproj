@@ -71,31 +71,31 @@
     <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileDespawner.cs" />
     <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileSpawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -281,13 +281,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/BCIT/Level_2/Projects2/BestDiabetesGameGG/Unity/Core/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.0f2/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
