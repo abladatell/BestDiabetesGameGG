@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TestLvl.unity
+- path: Assets/Scenes/Anadi is not nice.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
