@@ -77,9 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ed048d9e5c04e4eaa4b2ca32f2d358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 1865700879953798841}
   bulletCollider: {fileID: 7646794297612702224}
   damage: 1
-  playerCollider: {fileID: 0}
+  playerCollider: {fileID: 7535404089156074267, guid: 7cf8f681791419148ad9c7ee4ed82c34,
+    type: 3}
 --- !u!1 &3447427454460392435
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3447427454460392435}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -257,7 +259,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4959904710810442563}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -348,7 +350,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5985065621125890459}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2

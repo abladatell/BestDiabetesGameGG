@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ProjectileCollisionDetection : MonoBehaviour
 {
+    public GameObject bullet;
     public Collider bulletCollider;
     public int damage = 0;
-    public Collider playerCollider;
+    public GameObject playerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,6 @@ public class ProjectileCollisionDetection : MonoBehaviour
     void Update()
     {
         var col = bulletCollider;
-        Physics.IgnoreCollision(col, playerCollider);
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
         foreach (Collider c in cols)
         {

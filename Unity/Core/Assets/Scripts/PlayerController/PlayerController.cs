@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     Vector3 forward, right;
     Vector3 lookPos;
 
+    Animator anim;
+
     public Collider[] attackHitBoxes;
 
 	// Use this for initialization
@@ -16,7 +18,8 @@ public class PlayerController : MonoBehaviour {
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-	}
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +35,13 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Move();
+        }
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+        {
+            anim.SetTrigger("Run");
+        } else
+        {
+            anim.SetTrigger("Idle");
         }
     }
     void Move()
@@ -49,6 +59,7 @@ public class PlayerController : MonoBehaviour {
 
     private void launchAttack(Collider col)
     {
+        anim.SetTrigger("Attack");
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
         foreach(Collider c in cols)
         {
