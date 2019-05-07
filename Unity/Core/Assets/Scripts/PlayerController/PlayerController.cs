@@ -17,9 +17,10 @@ public class PlayerController : MonoBehaviour {
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.F))
         {
             launchAttack(attackHitBoxes[0]);
@@ -32,22 +33,7 @@ public class PlayerController : MonoBehaviour {
         {
             Move();
         }
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, 100))
-        {
-            lookPos = hit.point;
-        }
-
-        Vector3 lookDir = lookPos - transform.position;
-        lookDir.y = 0;
-
-        transform.LookAt(transform.position + lookDir, Vector3.up);
     }
-
     void Move()
     {
         Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"), 0, Input.GetAxis("VerticalKey"));
