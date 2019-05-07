@@ -6,6 +6,7 @@ public class ProjectileCollisonDetection : MonoBehaviour
 {
     public Collider bulletCollider;
     public int damage = 0;
+    public GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,10 @@ public class ProjectileCollisonDetection : MonoBehaviour
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
         foreach (Collider c in cols)
         {
+            if (c.name == "BodyCollider")
+            {
+                continue;
+            }
             if (c.transform.parent.parent == transform)
             {
                 Destroy(gameObject, 0);
