@@ -1,10 +1,12 @@
 import Home from "./components/pages/Home.vue";
-import Link1 from "./components/pages/Link1.vue";
+import AboutUs from "./components/pages/AboutUs.vue";
 import Game from "./components/Game.vue";
+import Login from "./components/pages/Login.vue"
 
 export const routes = [
-    {path: "", component: Home},
-    {path: "/link1", component: Link1},
+    {path: "/", component: Login},
+    {path: "/home", component: Home},
+    {path: "/aboutus", component: AboutUs},
     {path: "/game", component: Game},
     {path: "/*", redirect: "/"}
 ];
