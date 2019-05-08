@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour {
 
     public Collider[] attackHitBoxes;
 
-	// Use this for initialization
-	void Start () {
+    bool runningBool;
+
+    // Use this for initialization
+    void Start () {
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -38,9 +40,11 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
+            runningBool = true;
             anim.SetTrigger("Run");
-        } else
+        } else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
+            runningBool = false;
             anim.SetTrigger("Idle");
         }
     }
@@ -81,6 +85,14 @@ public class PlayerController : MonoBehaviour {
                     break;
             }
             c.SendMessageUpwards("takeDamage",damage);
+        }
+    }
+
+    private void movementAnimation()
+    {
+        if (runningBool == true)
+        {
+            
         }
     }
 
