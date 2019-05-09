@@ -11,7 +11,15 @@
 
 <script>
 export default {
-    
+    created() {
+        document.getElementById('particles-js').remove();
+    },
+    destroyed() {
+        let e = document.createElement("div");
+        e.setAttribute("id", "particles-js");
+        document.body.appendChild(e);
+        particlesJS.load('particles-js', 'particles.json');
+    }
 }
 </script>
 

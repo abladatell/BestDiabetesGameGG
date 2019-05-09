@@ -1,7 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express();
 const knex = require("knex");
+
+const app = express();
+
+app.use(bodyParser.json());
 
 const db = knex({
     client: 'mysql',
@@ -13,14 +16,23 @@ const db = knex({
     }
 });
 
-db("UserSave").insert({
-    UserNo: 22,
-    SaveState: "a322"
-    
-});
+
+
+// db("GameData").insert({
+//     userNo: 3,
+//     userName: 'betteruser',
+//     saveState: "savestate22",
+//     LSTime: "02:03:04",
+//     HSTime: "03:03:04",
+//     totalTime: "05:04:05",
+//     firstName: "Jack",
+//     password: "22"
+// }).then(result => {
+//     console.log(result);
+// });
 
 // console.log(database.select("*").from("UserSave"));
-db.select("*").from("UserSave").then(data => {
+db.select("*").from("GameData").then(data => {
     console.log(data);
 });
 

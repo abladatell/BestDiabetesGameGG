@@ -7,7 +7,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import {routes} from "./routes";
 
 
-
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
@@ -23,3 +22,4 @@ new Vue({
     router,
     render: h => h(App),
 });
+

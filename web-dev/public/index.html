@@ -13,7 +13,6 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script> let unityInstance = UnityLoader.instantiate("unityContainer", "Build/buildd.json", {onProgress: UnityProgress});</script>
-
 </head>
 
 <body>
@@ -21,7 +20,11 @@
         <strong>We're sorry but web-dev doesn't work properly without JavaScript enabled. Please enable it to
             continue.</strong>
     </noscript>
+    
     <div id="app"></div>
+    <div id="particles-js"></div>
+    <script src="particles.min.js"></script>
+    <script>particlesJS.load('particles-js', 'particles.json');</script>
 
 </body>
 
