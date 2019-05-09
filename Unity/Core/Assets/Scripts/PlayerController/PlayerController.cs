@@ -34,18 +34,34 @@ public class PlayerController : MonoBehaviour {
         {
             launchAttack(attackHitBoxes[1]);
         }
+        if (Input.GetKeyUp(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
+        else if (!Input.GetKey(KeyCode.W) && Input.GetKeyUp(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetKeyUp(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && Input.GetKeyUp(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Move();
-        }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
-        {
-            runningBool = true;
-            anim.SetTrigger("Run");
-        } else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-        {
-            runningBool = false;
-            anim.SetTrigger("Idle");
+            if (runningBool == false)
+            {
+                runningBool = true;
+                movementAnimation();
+            }
         }
     }
     void Move()
@@ -92,7 +108,10 @@ public class PlayerController : MonoBehaviour {
     {
         if (runningBool == true)
         {
-            
+            anim.SetTrigger("Run");
+        } else
+        {
+            anim.SetTrigger("Idle");
         }
     }
 
