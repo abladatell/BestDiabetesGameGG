@@ -15,12 +15,13 @@ public class ProjectileSpawner : MonoBehaviour
     public bool isPlayer = false;
     public bool isAggro = false;
     private Vector3 lookPos;
+    private AudioSource bulletSound; 
 
     // Start is called before the first frame update
     void Start()
     {
         rbody = GetComponent<Rigidbody>();
-
+        bulletSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,11 +48,12 @@ public class ProjectileSpawner : MonoBehaviour
         transform.LookAt(transform.position + lookDir, Vector3.up);
 
         if (isPlayer && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) || !isPlayer && isAggro) {
-            if(timeElapsed > shootRate)
+            if (timeElapsed > shootRate)
             {
                 GameObject go = (GameObject) Instantiate(
                     bullet, gun.position, gun.rotation);
                 go.GetComponent<Rigidbody>().AddForce(gun.forward * shootForce);
+                bulletSound.Play();
                 timeElapsed = 0;
             }
         }
