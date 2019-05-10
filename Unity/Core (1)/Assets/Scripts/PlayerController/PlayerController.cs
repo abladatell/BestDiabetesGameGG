@@ -8,18 +8,27 @@ public class PlayerController : MonoBehaviour {
     Vector3 forward, right;
     Vector3 lookPos;
 
-    public Collider[] attackHitBoxes;
+    Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    public Collider[] attackHitBoxes;
+    public GameObject gun;
+
+    bool runningBool;
+    int aim = 4;
+    int check = 4;
+
+    // Use this for initialization
+    void Start () {
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        anim = GetComponent<Animator>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.F))
         {
             launchAttack(attackHitBoxes[0]);
@@ -28,26 +37,58 @@ public class PlayerController : MonoBehaviour {
         {
             launchAttack(attackHitBoxes[1]);
         }
+        if (Input.GetKeyUp(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
+        else if (!Input.GetKey(KeyCode.W) && Input.GetKeyUp(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && Input.GetKeyUp(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
+        else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && Input.GetKeyUp(KeyCode.D))
+        {
+            runningBool = false;
+            movementAnimation();
+        }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Move();
+            if (runningBool == false)
+            {
+                runningBool = true;
+                movementAnimation();
+            }
         }
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, 100))
+        if (gun.transform.localRotation.eulerAngles.y <= 135 && gun.transform.localRotation.eulerAngles.y > 45)
         {
-            lookPos = hit.point;
+            aim = 0;
+        } else if (gun.transform.localRotation.eulerAngles.y <= 225 && gun.transform.localRotation.eulerAngles.y > 135)
+        {
+            aim = 1;
+        } else if (gun.transform.localRotation.eulerAngles.y <= 315 && gun.transform.localRotation.eulerAngles.y > 225)
+        {
+            aim = 2;
+        } else if (gun.transform.localRotation.eulerAngles.y <= 45 || gun.transform.localRotation.eulerAngles.y > 315)
+        {
+            aim = 3;
         }
-
-        Vector3 lookDir = lookPos - transform.position;
-        lookDir.y = 0;
-
-        transform.LookAt(transform.position + lookDir, Vector3.up);
+        if (Input.GetMouseButton(0) && check != aim)
+        {
+            check = aim;
+            aimAnimation(aim);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            aimAnimation(4);
+        }
     }
-
     void Move()
     {
         Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"), 0, Input.GetAxis("VerticalKey"));
@@ -63,6 +104,7 @@ public class PlayerController : MonoBehaviour {
 
     private void launchAttack(Collider col)
     {
+        anim.SetTrigger("Attack");
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
         foreach(Collider c in cols)
         {
@@ -84,6 +126,67 @@ public class PlayerController : MonoBehaviour {
                     break;
             }
             c.SendMessageUpwards("takeDamage",damage);
+        }
+    }
+
+    private void movementAnimation()
+    {
+        if (runningBool == true)
+        {
+            anim.SetTrigger("Run");
+        } else
+        {
+            anim.SetTrigger("Idle");
+        }
+    }
+
+    private void aimAnimation(int aimAngle)
+    {
+        if (runningBool == true)
+        {
+            if (aimAngle == 0)
+            {
+                anim.SetTrigger("Aim Right Run");
+            }
+            else if (aimAngle == 1)
+            {
+                anim.SetTrigger("Aim Backward Run");
+            }
+            else if (aimAngle == 2)
+            {
+                anim.SetTrigger("Aim Left Run");
+            }
+            else if (aimAngle == 3)
+            {
+                anim.SetTrigger("Aim Forward Run");
+            }
+            else if (aimAngle == 4)
+            {
+                movementAnimation();
+            }
+        }
+        else
+        {
+            if (aimAngle == 0)
+            {
+                anim.SetTrigger("Aim Right");
+            }
+            else if (aimAngle == 1)
+            {
+                anim.SetTrigger("Aim Backward");
+            }
+            else if (aimAngle == 2)
+            {
+                anim.SetTrigger("Aim Left");
+            }
+            else if (aimAngle == 3)
+            {
+                anim.SetTrigger("Aim Forward");
+            }
+            else if (aimAngle == 4)
+            {
+                movementAnimation();
+            }
         }
     }
 

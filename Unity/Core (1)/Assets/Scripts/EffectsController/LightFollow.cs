@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class LightFollow : MonoBehaviour {
 
-    public GameObject target;
-    Vector3 offset;
+    private Vector3 lookPos;
 
     void Start()
     {
-        offset = transform.position - target.transform.position;
+        
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
-        Vector3 desiredPosition = target.transform.position + offset;
-        transform.position = desiredPosition;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            lookPos = hit.point;
+        }
+
+        Vector3 lookDir = lookPos - transform.position;
+        lookDir.y = 0;
+
+        transform.LookAt(transform.position + lookDir, Vector3.up);
     }
 }
