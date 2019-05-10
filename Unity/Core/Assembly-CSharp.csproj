@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\EffectsController\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\EffectsController\LightFollow.cs" />
+    <Compile Include="Assets\Scripts\EnemyController\BossEyeController.cs" />
     <Compile Include="Assets\Scripts\EnemyController\EnemyController.cs" />
     <Compile Include="Assets\Scripts\EnvironmentScripts\WallCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerAnimator.cs" />

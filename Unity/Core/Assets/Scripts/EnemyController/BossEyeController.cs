@@ -2,25 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class BossEyeController : MonoBehaviour
 {
-    public int maxHealth = 3;
+    public int maxHealth = 300;
     public int health;
     public float aggroWidth = 10f;
     public float aggroHeight = 10f;
     private Transform playerPos;
     public float moveSpeed = 1f;
 
+    public int stageTransitionOne = 200;
+    public int stageTransitionTwo = 100;
+    public float attackTransitionTime = 1f;
 
     void Start()
     {
         health = maxHealth;
     }
 
-    
+
     void FixedUpdate()
     {
-        if(health <= 0){
+        checkAggro();
+        if (health <= 0)
+        {
             Destroy(gameObject, 0);
         }
     }
@@ -30,7 +35,7 @@ public class EnemyController : MonoBehaviour
         health = health - damage;
         if (health <= 0)
         {
-            Debug.Log("Enemy is dead");
+            Debug.Log("Eye Boss is dead");
         }
     }
 
