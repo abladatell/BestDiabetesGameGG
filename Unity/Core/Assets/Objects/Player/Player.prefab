@@ -174,7 +174,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7535404089156074267}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -253,6 +253,7 @@ MonoBehaviour:
   attackHitBoxes:
   - {fileID: 7536334120679773302}
   - {fileID: 7536334121083479985}
+  gun: {fileID: 0}
 --- !u!95 &-6977493895832610785
 Animator:
   serializedVersion: 3

@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     
     void FixedUpdate()
     {
+        checkAggro();
         if(health <= 0){
             Destroy(gameObject, 0);
         }
