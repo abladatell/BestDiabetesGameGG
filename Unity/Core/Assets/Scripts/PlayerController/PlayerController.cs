@@ -11,8 +11,11 @@ public class PlayerController : MonoBehaviour {
     Animator anim;
 
     public Collider[] attackHitBoxes;
+    public GameObject gun;
 
     bool runningBool;
+    int aim = 4;
+    int check = 4;
 
     // Use this for initialization
     void Start () {
@@ -63,6 +66,28 @@ public class PlayerController : MonoBehaviour {
                 movementAnimation();
             }
         }
+        if (gun.transform.localRotation.eulerAngles.y <= 135 && gun.transform.localRotation.eulerAngles.y > 45)
+        {
+            aim = 0;
+        } else if (gun.transform.localRotation.eulerAngles.y <= 225 && gun.transform.localRotation.eulerAngles.y > 135)
+        {
+            aim = 1;
+        } else if (gun.transform.localRotation.eulerAngles.y <= 315 && gun.transform.localRotation.eulerAngles.y > 225)
+        {
+            aim = 2;
+        } else if (gun.transform.localRotation.eulerAngles.y <= 45 || gun.transform.localRotation.eulerAngles.y > 315)
+        {
+            aim = 3;
+        }
+        if (Input.GetMouseButton(0) && check != aim)
+        {
+            check = aim;
+            aimAnimation(aim);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            aimAnimation(4);
+        }
     }
     void Move()
     {
@@ -112,6 +137,56 @@ public class PlayerController : MonoBehaviour {
         } else
         {
             anim.SetTrigger("Idle");
+        }
+    }
+
+    private void aimAnimation(int aimAngle)
+    {
+        if (runningBool == true)
+        {
+            if (aimAngle == 0)
+            {
+                anim.SetTrigger("Aim Right Run");
+            }
+            else if (aimAngle == 1)
+            {
+                anim.SetTrigger("Aim Backward Run");
+            }
+            else if (aimAngle == 2)
+            {
+                anim.SetTrigger("Aim Left Run");
+            }
+            else if (aimAngle == 3)
+            {
+                anim.SetTrigger("Aim Forward Run");
+            }
+            else if (aimAngle == 4)
+            {
+                movementAnimation();
+            }
+        }
+        else
+        {
+            if (aimAngle == 0)
+            {
+                anim.SetTrigger("Aim Right");
+            }
+            else if (aimAngle == 1)
+            {
+                anim.SetTrigger("Aim Backward");
+            }
+            else if (aimAngle == 2)
+            {
+                anim.SetTrigger("Aim Left");
+            }
+            else if (aimAngle == 3)
+            {
+                anim.SetTrigger("Aim Forward");
+            }
+            else if (aimAngle == 4)
+            {
+                movementAnimation();
+            }
         }
     }
 
