@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    public GameObject player;
+    private NavMeshAgent nav;
     public int maxHealth = 3;
     public int health;
     public float aggroWidth = 10f;
@@ -15,9 +18,10 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        nav = GetComponent<NavMeshAgent>();
     }
 
-    
+
     void FixedUpdate()
     {
         checkAggro();
