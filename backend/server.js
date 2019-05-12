@@ -17,7 +17,6 @@ const db = knex({
 });
 
 
-
 // db("GameData").insert({
 //     userNo: 3,
 //     userName: 'betteruser',
@@ -40,6 +39,7 @@ db.select("*").from("GameData").then(data => {
 app.get("/", (req, res) => {
     res.send("this is working");
 });
+let table = "something"
 
 app.listen(3002, () => {
     console.log("app is running on port 3002");

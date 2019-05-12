@@ -6,7 +6,7 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item to="/home" active-class="active" exact class="items" id="home">Home</b-nav-item>
+          <b-nav-item to="/" active-class="active" exact class="items" id="home">Home</b-nav-item>
           <b-nav-item to="/aboutus" active-class="active" class="items">About-Us</b-nav-item>
           <b-nav-item href="/game" active-class="active" class="items" :class="{active: isActive()}">Game</b-nav-item>
         </b-navbar-nav>
@@ -18,17 +18,13 @@
             <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
           </b-nav-form>
           
-          <b-nav-item-dropdown text="Mode" right>
-            <b-dropdown-item href="#">Hard</b-dropdown-item>
-            <b-dropd2own-item href="#">Insane</b-dropd2own-item>
-          </b-nav-item-dropdown>
 
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template slot="button-content">
               <em>Account</em>
             </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
+            <b-dropdown-item to="/profile">Profile</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
@@ -58,9 +54,7 @@ export default {
   margin-left: 5px;
 }
 
-#home {
-  margin-left: 50px;
-}
+
 
 .active {
   color: #fff;
