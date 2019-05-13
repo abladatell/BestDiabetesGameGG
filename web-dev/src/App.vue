@@ -2,8 +2,6 @@
     <div>
         <nav-bar></nav-bar>
         <router-view/>
-        <Signup></Signup>
-        <Signin></Signin>
     </div>
 </template>
 
@@ -18,9 +16,7 @@ import Signin from "./components/auth/Signin.vue";
 export default {
     components: {
         appHome: Home,
-        navBar: NavBar,
-        Signup: Signup,
-        Signin: Signin
+        navBar: NavBar
     }
 }
 </script>

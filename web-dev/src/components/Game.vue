@@ -21,7 +21,7 @@ export default {
         e.style.position = "fixed";
         e.style.marginTop = "-50%";
         e.style.width = "100%";
-        e.style.height = "130%";
+        e.style.height = "150%";
         document.body.appendChild(e);
         particlesJS.load('particles-js', 'particles.json');
     }

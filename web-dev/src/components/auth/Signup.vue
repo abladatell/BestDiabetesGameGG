@@ -61,6 +61,11 @@
               console.log(formData);
               
               this.$store.dispatch("signup", formData);
+              setTimeout(() => {
+                if (this.$store.getters.isAuthenticated) {
+                  this.$router.push({path: "/"});
+                }
+              }, 500);
         }
     }
   }

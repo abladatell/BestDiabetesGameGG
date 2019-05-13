@@ -16,9 +16,12 @@
                   id="password"
                   v-model="password">
         </div>
+        <br>
         <div class="submit">
           <button type="submit">Sign in</button>
         </div>
+        <br>
+        <router-link id="register-link" to="/register">Click here to Register</router-link>
       </form>
     </div>
   </div>
@@ -35,14 +38,18 @@
       }
     },
     methods: {
-      onSubmit () {
+      onSubmit() {
         const formData = {
           email: this.email,
           password: this.password,
         }
         console.log(formData)
         this.$store.dispatch("login", {email: formData.email, password: formData.password});
-                
+        setTimeout(() => {
+            if (this.$store.getters.isAuthenticated) {
+              this.$router.push({path: "/"});
+            }
+        }, 500);
       }
     }
   }
@@ -102,5 +109,8 @@
     background-color: transparent;
     color: #ccc;
     cursor: not-allowed;
+  }
+  #register-link {
+    color: darkturquoise;
   }
 </style>

@@ -15,6 +15,9 @@ export default new Vuex.Store({
         authUser(state, userData) {
             state.idToken = userData.token;
             state.userId = userData.userId;
+        },
+        storeUser1(state, user) {
+            state.user = user;
         }
     },
     actions: {
@@ -50,13 +53,23 @@ export default new Vuex.Store({
                 })
                 .catch(err => console.log(err));
         },
-        storeUser({commit}, userData) {
-            axios.post("https://bestdiabetesgamegg.firebaseio.com/users.json", userData)
+        storeUser({commit, state}, userData) {
+            if (!state.idToken) {//if idToken is null
+                console.log("id token is null from storeUser");
+                return 
+            }
+            console.log("storeUser ", state.idToken)
+            axios.post(`https://bestdiabetesgamegg.firebaseio.com/users.json?auth=${state.idToken}`, userData)
                 .then(res => console.log(res))
                 .catch(err => console.log(err));
         },
-        fetchUser({commit}) {
-            axios.get("https://bestdiabetesgamegg.firebaseio.com/users.json")
+        fetchUser({commit, state}) {
+            if (!state.idToken) {
+                console.log("idToken is null from fetchUser");
+                return
+            }
+            console.log("fetchuser", state.idToken)
+            axios.get(`https://bestdiabetesgamegg.firebaseio.com/users.json?auth=${state.idToken}`)
                 .then(res => {
                     const data = res.data;
                     const users = [];
@@ -66,12 +79,17 @@ export default new Vuex.Store({
                         users.push(user);
                     }
                     console.log(users);
-                    this.email = users[0].email;
+                    commit("storeUser1", users[0]);
                 })
                 .catch(err => console.log(err));
         }
     },
     getters: {
-
+        user(state) {
+            return state.user;
+        },
+        isAuthenticated(state) {
+            return state.idToken !== null;
+        }
     }
 });

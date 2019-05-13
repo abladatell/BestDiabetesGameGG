@@ -1,7 +1,7 @@
 <template>
   <div id="contain">
     <b-navbar toggleable="lg" type="dark" variant="info" sticky>
-      <b-navbar-brand href>Navigation</b-navbar-brand>
+      <b-navbar-brand id="navigation" href>Navigation</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
@@ -66,6 +66,10 @@ export default {
 
 #contain {
   margin-bottom: 10px;
+}
+
+#navigation {
+  color: darkslateblue;
 }
 </style>
 

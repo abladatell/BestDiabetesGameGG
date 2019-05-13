@@ -9,13 +9,14 @@
 <script>
 import axios from "axios";
 export default {
-    data() {
-        return {
-            email: ""
-        }
-    },
     created() {
-        
+        this.$store.dispatch("fetchUser");
+    },
+    computed: {
+        email() {
+            return this.$store.getters.user.email //user.email property in (state.user) in vuex
+
+        }
     }
 }
 </script>
