@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 3464414954163862604}
   - component: {fileID: 3479651448012314605}
   - component: {fileID: 2565214675422045415}
+  - component: {fileID: -4250515377163106109}
   m_Layer: 0
   m_Name: GlucoseMonster
   m_TagString: Untagged
@@ -228,11 +229,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85ecce780bbe7542ac1c4d5f154f0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4535386861718472810, guid: d632aeb2ef278b340beb78f7456efad1, type: 3}
   maxHealth: 10
   health: 10
   aggroWidth: 15
   aggroHeight: 15
-  moveSpeed: 6
+--- !u!195 &-4250515377163106109
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025707898377928098}
+  m_Enabled: 1
+  m_AgentTypeID: -334000983
+  m_Radius: 0.0807927
+  m_Speed: 5
+  m_Acceleration: 10
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.29088604
+  m_BaseOffset: 0.14544302
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &8031783754998343967
 PrefabInstance:
   m_ObjectHideFlags: 0

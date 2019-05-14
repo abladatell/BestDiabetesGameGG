@@ -27,15 +27,11 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            launchAttack(attackHitBoxes[0]);
-        }
         if (Input.GetMouseButtonDown(1))
         {
-            launchAttack(attackHitBoxes[1]);
+            launchAttack(attackHitBoxes[0]);
         }
         if (Input.GetKeyUp(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
@@ -105,6 +101,7 @@ public class PlayerController : MonoBehaviour {
     private void launchAttack(Collider col)
     {
         anim.SetTrigger("Attack");
+        movementAnimation();
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
         foreach(Collider c in cols)
         {
@@ -117,9 +114,6 @@ public class PlayerController : MonoBehaviour {
             {
                 case "MeleeCollider":
                     damage = 2;
-                    break;
-                case "LongCollider":
-                    damage = 3;
                     break;
                 default:
                     Debug.Log("Collider Unknown");

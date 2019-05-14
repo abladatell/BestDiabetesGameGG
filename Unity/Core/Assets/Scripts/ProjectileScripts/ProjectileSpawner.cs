@@ -29,10 +29,25 @@ public class ProjectileSpawner : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        
+
 
         rbody.velocity = new Vector3(h, v, 0);
 
+        if (isPlayer && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))) {
+            Target();
+            Shoot();
+        }
+
+        if (isAggro)
+        {
+            Shoot();
+        }
+
+        timeElapsed += Time.deltaTime;
+    }
+
+    void Target()
+    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
@@ -46,22 +61,36 @@ public class ProjectileSpawner : MonoBehaviour
         lookDir.y = 0;
 
         transform.LookAt(transform.position + lookDir, Vector3.up);
+    }
 
-        if (isPlayer && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0)) || !isPlayer && isAggro) {
-            if (timeElapsed > shootRate)
+    void Shoot()
+    {
+        if (timeElapsed > shootRate)
+        {
+            
+            try
             {
-                GameObject go = (GameObject) Instantiate(
-                    bullet, gun.position, gun.rotation);
+                GameObject go = (GameObject)Instantiate(
+                bullet, gun.position, gun.rotation);
                 go.GetComponent<Rigidbody>().AddForce(gun.forward * shootForce);
                 bulletSound.Play();
+            }catch (System.Exception e)
+            {
+            }
+            finally
+            {
                 timeElapsed = 0;
             }
         }
+    }
 
-        timeElapsed += Time.deltaTime;
-        if(timeElapsed > 2 * shootRate)
-        {
-            timeElapsed = 2 * shootRate;
-        }
+    public void setAggro(bool aggro)
+    {
+        isAggro = aggro;
+    }
+
+    public void setFireRate(float newFireRate)
+    {
+        shootRate = newFireRate;
     }
 }
