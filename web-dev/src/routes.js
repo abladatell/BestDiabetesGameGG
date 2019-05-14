@@ -5,10 +5,14 @@ import UserProfile from "./components/auth/UserProfile.vue";
 import store from "./store";
 import Signin from "./components/auth/Signin.vue";
 import Signup from "./components/auth/Signup.vue";
+import Content1 from "./components/pages/Content1.vue";
+import Content2 from "./components/pages/Content2.vue";
 
 export const routes = [
-    {path: "/", component: Home,
+    
+    {path: "/content1", component: Content1,
         beforeEnter(to, from, next) {
+            console.log(store.state.idToken)
             if (store.state.idToken) {
                 next();
             } else {
@@ -16,8 +20,9 @@ export const routes = [
             }
         }
     },
-    {path: "/aboutus", component: AboutUs,
+    {path: "/content2", component: Content2,
         beforeEnter(to, from, next) {
+            console.log(store.state.idToken)
             if (store.state.idToken) {
                 next();
             } else {
@@ -26,11 +31,11 @@ export const routes = [
         }
     },
     {path: "/game", component: Game,
-        beforeEnter(to, from,next) {
+        beforeEnter(to, from, next) {
             if (store.state.idToken) {
                 next();
             } else {
-                next("/signin");
+                next();
             }
         }
     },
@@ -45,6 +50,15 @@ export const routes = [
     },
     {path: "/signin", component: Signin},
     {path: "/register", component: Signup},
+    {path: "/", component: Home,
+        beforeEnter(to, from, next) {
+            if (store.state.idToken) {
+                next();
+            } else {
+                next("/signin");
+            }
+        }
+    },
     {path: "/*", redirect: "/"},
     
 ];

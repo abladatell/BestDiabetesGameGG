@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+import createPersistedState from "vuex-persistedstate";
+import * as Cookies from "js-cookie";
 
 
 Vue.use(Vuex);
@@ -18,6 +20,9 @@ export default new Vuex.Store({
         },
         storeUser1(state, user) {
             state.user = user;
+        },
+        clearToken(state) {
+            state.idToken = null;
         }
     },
     actions: {
@@ -82,6 +87,9 @@ export default new Vuex.Store({
                     commit("storeUser1", users[0]);
                 })
                 .catch(err => console.log(err));
+        },
+        logout(vuexContext) {
+            vuexContext.commit("clearToken");
         }
     },
     getters: {
@@ -91,5 +99,11 @@ export default new Vuex.Store({
         isAuthenticated(state) {
             return state.idToken !== null;
         }
-    }
+    },
+    plugins: [
+        createPersistedState({
+            
+        })
+    ]
 });
+

@@ -7,8 +7,9 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item to="/" active-class="active" exact class="items" id="home">Home</b-nav-item>
-          <b-nav-item to="/aboutus" active-class="active" class="items">About-Us</b-nav-item>
-          <b-nav-item href="/game" active-class="active" class="items" :class="{active: isActive()}">Game</b-nav-item>
+          <b-nav-item to="/content1" active-class="active" class="items">Content1</b-nav-item>
+          <b-nav-item to="/content2" active-class="active" class="items">Content2</b-nav-item>
+          <b-nav-item href="/#/game" active-class="active" class="items" :class="{active: isActive()}">Game</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -25,7 +26,7 @@
               <em>Account</em>
             </template>
             <b-dropdown-item to="/profile">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item @click="onLogout">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -43,6 +44,15 @@ export default {
                 return false;
             }
         }
+    },
+    methods: {
+      onLogout() {
+        this.$store.dispatch("logout")
+          .then(() => {
+            this.$router.push({path: "/"});
+          })
+
+      }
     }
 };
 </script>

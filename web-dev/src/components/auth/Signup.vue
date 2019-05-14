@@ -59,6 +59,13 @@
                 terms: this.terms
               }
               console.log(formData);
+              if (this.password !== this.confirmPassword) {
+                console.log("no match password");
+                const err = document.createElement("div");
+                
+                document.getElementById("confirm-password").style.backgroundColor = "red";
+                return;
+              }
               
               this.$store.dispatch("signup", formData);
               setTimeout(() => {

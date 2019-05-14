@@ -13,15 +13,15 @@
 export default {
     created() {
         document.getElementById('particles-js').remove();
-        
     },
     destroyed() {
         let e = document.createElement("div");
         e.setAttribute("id", "particles-js");
         e.style.position = "fixed";
         e.style.marginTop = "-50%";
-        e.style.width = "100%";
-        e.style.height = "150%";
+        e.style.width = "200%";
+        e.style.height = "200%";
+        e.style.zIndex = "-2";
         document.body.appendChild(e);
         particlesJS.load('particles-js', 'particles.json');
     }
