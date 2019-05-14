@@ -35,7 +35,7 @@ export const routes = [
             if (store.state.idToken) {
                 next();
             } else {
-                next();
+                next("/signin");
             }
         }
     },

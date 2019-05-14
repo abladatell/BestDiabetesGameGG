@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h3>Risks of having diabetes</h3>
+        <b-jumbotron>
+        <h3>Risks of Having Diabetes</h3>
         <ul>
             <li>Kidney disease</li>
             <li>Retinopathy</li>
@@ -25,7 +26,7 @@
 
         <br />
 
-        <h3>Symptoms of diabetes</h3>
+        <h3>Symptoms of Diabetes</h3>
         <ul>
             <li>Extreme thirst</li>
             <li>Weight loss</li>
@@ -40,6 +41,7 @@
             <li>Vomitin</li>
             <li>Frequent infections</li>
         </ul>
+        </b-jumbotron>
     </div>
 </template>
 
@@ -49,6 +51,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    div {
+        width: 70%;
+        margin: auto;
+    }
 </style>

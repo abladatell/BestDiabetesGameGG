@@ -5,7 +5,8 @@
             <div class="webgl-logo"></div>
             <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
             <div class="title">Core</div>
-        </div>
+        </div><br><br>
+        <b-button @click="reload">Reload</b-button>
     </div>
 </template>
 
@@ -24,6 +25,11 @@ export default {
         e.style.zIndex = "-2";
         document.body.appendChild(e);
         particlesJS.load('particles-js', 'particles.json');
+    },
+    methods: {
+        reload() {
+            location.reload();
+        }
     }
 }
 </script>

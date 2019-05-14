@@ -1,5 +1,6 @@
 <template>
     <div>
+        <b-jumbotron>
         <h3>What is Diabetes?</h3>
         <ul>
             <li> It's when the body cant produce or properly use insulin.</li>
@@ -33,6 +34,7 @@
             <li>Occurs during pregnancy.</li>
             <li>Somewhere between 3-20% of pregnant woman develop it.</li>
         </ul>
+        </b-jumbotron>
     </div>
 </template>
 
@@ -42,6 +44,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    div {
+        width: 70%;
+        margin: auto;
+    }
 </style>
