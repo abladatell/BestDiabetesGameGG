@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour {
     bool runningBool;
     int aim = 4;
     int check = 4;
-    int health;
+    public int health;
 
     // Use this for initialization
     void Start () {
@@ -119,6 +120,7 @@ public class PlayerController : MonoBehaviour {
     }
     void checkHealth()
     {
+        //Debug.Log("Checking Health");
         if (health > lowSugarLimit && health < highSugarLimit)
         {
             moveSpeed = regularMoveSpeed;
@@ -138,15 +140,19 @@ public class PlayerController : MonoBehaviour {
         {
             gameOver();
         }
+        //Debug.Log("Health Checked");
     }
 
     void gameOver()
     {
         Debug.Log("Player has died");
+        Destroy(gameObject, 0);
+        SceneManager.LoadScene("Anadi Stahp Breaking shit");
     }
 
     public void takeDamage(int damage)
     {
+        Debug.Log("Taking Damage");
         health = health + damage;
     }
 
