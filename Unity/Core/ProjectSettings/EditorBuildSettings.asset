@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Anadi is actually really nice UI.unity
+    guid: 2c82115023564614cb7944c5c6846cc7
+  - enabled: 1
+    path: Assets/Scenes/TestLvl.unity
+    guid: 4dd5acb6223de4344ad6f78eacfaaec6
+  - enabled: 1
     path: Assets/Scenes/Anadi Stahp Breaking shit.unity
     guid: 78f843dc17727ea46a98db4e80f8d4fe
   m_configObjects: {}

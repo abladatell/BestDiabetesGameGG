@@ -28,7 +28,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -62,16 +62,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\EffectsController\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\EffectsController\LightFollow.cs" />
-    <Compile Include="Assets\Scripts\EnemyController\BossEyeController.cs" />
-    <Compile Include="Assets\Scripts\EnemyController\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\EnvironmentScripts\WallCollision.cs" />
-    <Compile Include="Assets\Scripts\PlayerController\PlayerAnimator.cs" />
-    <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileCollisionDetection.cs" />
-    <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileDespawner.cs" />
-    <Compile Include="Assets\Scripts\ProjectileScripts\ProjectileSpawner.cs" />
+    <Compile Include="Assets\Objects\Scripts\EffectsController\CameraFollow.cs" />
+    <Compile Include="Assets\Objects\Scripts\EffectsController\LightFollow.cs" />
+    <Compile Include="Assets\Objects\Scripts\EnemyController\BossEyeController.cs" />
+    <Compile Include="Assets\Objects\Scripts\EnemyController\EnemyController.cs" />
+    <Compile Include="Assets\Objects\Scripts\EnvironmentScripts\WallCollision.cs" />
+    <Compile Include="Assets\Objects\Scripts\PlayerController\PlayerAnimator.cs" />
+    <Compile Include="Assets\Objects\Scripts\PlayerController\PlayerController.cs" />
+    <Compile Include="Assets\Objects\Scripts\ProjectileScripts\ProjectileCollisionDetection.cs" />
+    <Compile Include="Assets\Objects\Scripts\ProjectileScripts\ProjectileDespawner.cs" />
+    <Compile Include="Assets\Objects\Scripts\ProjectileScripts\ProjectileSpawner.cs" />
+    <Compile Include="Assets\Objects\Scripts\UIScripts\Control.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
