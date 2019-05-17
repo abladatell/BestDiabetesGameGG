@@ -22,16 +22,23 @@ public class ProjectileCollisionDetection : MonoBehaviour
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
         foreach (Collider c in cols)
         {
-            if (c.name == "BodyCollider")
+            try
             {
-                continue;
-            }
-            if (c.transform.parent.parent == transform)
-            {
+                if (c.transform.parent.parent.name == playerCollider.name)
+                {
+                    continue;
+                }
+                if (c.transform.parent.parent == transform)
+                {
+                    Destroy(gameObject, 0);
+                }
+                c.SendMessageUpwards("takeDamage", damage);
                 Destroy(gameObject, 0);
+            } catch (System.Exception e)
+            {
+                //Nothin
             }
-            c.SendMessageUpwards("takeDamage", damage);
-            Destroy(gameObject, 0);
+            
         }
     }
 

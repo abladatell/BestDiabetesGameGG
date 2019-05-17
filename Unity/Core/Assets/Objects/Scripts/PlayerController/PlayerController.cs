@@ -125,7 +125,16 @@ public class PlayerController : MonoBehaviour {
         {
             moveSpeed = regularMoveSpeed;
             meleeDmg = regularMeleeDmg;
-        } else if (health < lowSugarLimit)
+        }
+        else if (health > highSugarDeath)
+        {
+            gameOver();
+        }
+        else if (health < lowSugarDeath)
+        {
+            gameOver();
+        }
+        else if (health < lowSugarLimit)
         {
             moveSpeed = lowSpeed;
             meleeDmg = regularMeleeDmg;
@@ -133,12 +142,6 @@ public class PlayerController : MonoBehaviour {
         {
             moveSpeed = regularMoveSpeed;
             meleeDmg = lowDmg;
-        } else if (health > highSugarDeath)
-        {
-            gameOver();
-        } else if (health < lowSugarDeath)
-        {
-            gameOver();
         }
         //Debug.Log("Health Checked");
     }

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 8883100511273919991}
   - component: {fileID: 3536059034183667317}
   - component: {fileID: 3329962026980131838}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85ecce780bbe7542ac1c4d5f154f0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2398330149881506734, guid: 28e72dd3e28c7594ba711b687addb902, type: 3}
+  player: {fileID: 8436886112038556688, guid: 995b488d1fc94704981b3a7ca6222caf, type: 3}
   maxHealth: 10
   health: 10
   aggroWidth: 15

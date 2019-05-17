@@ -79,7 +79,7 @@ MonoBehaviour:
   bullet: {fileID: 1843584878818990035}
   bulletCollider: {fileID: 7669394163304899450}
   damage: 1
-  playerCollider: {fileID: 7535404089156074267, guid: 7cf8f681791419148ad9c7ee4ed82c34,
+  playerCollider: {fileID: 7634968547694647233, guid: 45f534663abd1344e9ae4a5a7297d683,
     type: 3}
 --- !u!1 &3433518336980566681
 GameObject:

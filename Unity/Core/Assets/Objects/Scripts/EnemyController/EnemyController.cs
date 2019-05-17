@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
 
     void checkAggro()
     {
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        playerPos = player.transform;
         // Below checks if player is in aggro range
         if (playerPos.position.x > this.transform.position.x - aggroWidth && playerPos.position.x < this.transform.position.x + aggroWidth)
         {
@@ -94,12 +94,17 @@ public class EnemyController : MonoBehaviour
             var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
             foreach (Collider c in cols)
             {
+                Debug.Log(c.gameObject.name);
                 if (c.transform.parent.parent == transform)
                 {
                     continue;
                 }
-                c.SendMessageUpwards("takeDamage", damage);
-                Debug.Log("Doing Damage");
+                if(c.gameObject.name == "BodyCollider")
+                {
+                    Debug.Log("Doing Damage");
+                    c.SendMessageUpwards("takeDamage", damage);
+                }
+                
             }
         }
         catch (System.Exception e)
