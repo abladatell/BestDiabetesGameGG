@@ -73,6 +73,7 @@
     <Compile Include="Assets\Objects\Scripts\ProjectileScripts\ProjectileDespawner.cs" />
     <Compile Include="Assets\Objects\Scripts\ProjectileScripts\ProjectileSpawner.cs" />
     <Compile Include="Assets\Objects\Scripts\UIScripts\Control.cs" />
+    <Compile Include="Assets\Objects\Scripts\UIScripts\HighSugarTint.cs" />
     <Compile Include="Assets\Objects\Scripts\UIScripts\PauseGame.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Devin/Documents/GitHub/NewBestDiabetesGameGG/Team-25-COMP-2930/Unity/Core/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
