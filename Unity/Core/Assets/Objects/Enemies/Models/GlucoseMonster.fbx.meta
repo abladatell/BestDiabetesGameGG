@@ -1,17 +1,11 @@
 fileFormatVersion: 2
-guid: 22389d1beea92154786fb28144c23739
+guid: 025716b813b6c3548bc57527c476e0a6
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
   - first:
-      74: 885944232402757753
-    second: Armature|Action
-  - first:
       74: 4723146814002874508
     second: Armature|Attack
-  - first:
-      74: -8945691123924629249
-    second: Armature|Idle
   - first:
       74: -5913978943142729594
     second: Armature|Move
@@ -26,7 +20,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: <Root Transform>
+    motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -35,7 +29,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -73,35 +67,6 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Idle
-      takeName: Armature|Idle
-      internalID: -8945691123924629249
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
       name: Armature|Move
       takeName: Armature|Move
       internalID: -5913978943142729594
@@ -113,7 +78,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -171,87 +136,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: GlucoseMonster(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Armature
-      parentName: GlucoseMonster(Clone)
-      position: {x: 0.0007725954, y: -0.8904062, z: 0.0956229}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Spine
-      parentName: Armature
-      position: {x: -0, y: 0, z: -0.002546597}
-      rotation: {x: 0.7080367, y: -0.00000008440455, z: -0.00000008418269, w: 0.7061756}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: Head
-      parentName: Spine
-      position: {x: -0, y: 0.016798533, z: 4.074539e-12}
-      rotation: {x: -0.0022277413, y: 0.00000011920898, z: 2.655674e-10, w: 0.99999756}
-      scale: {x: 1, y: 0.99999994, z: 0.99999994}
-    - name: Horn1
-      parentName: Head
-      position: {x: -1.488185e-18, y: 0.016356664, z: -4.6566128e-12}
-      rotation: {x: -0.22540717, y: -0.00000011597716, z: 0.000000026770152, w: 0.9742646}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Horn2
-      parentName: Horn1
-      position: {x: 2.4202863e-16, y: 0.004018367, z: -8.9406965e-10}
-      rotation: {x: 0.3711464, y: 0.00000022403385, z: 0.000000019777776, w: 0.9285744}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Horn2_end
-      parentName: Horn2
-      position: {x: -0, y: 0.005292572, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm.L
-      parentName: Spine
-      position: {x: -0.0052651213, y: 0.012649035, z: 0.0000000017250341}
-      rotation: {x: -0.166925, y: -0.015135687, z: 0.9753996, w: 0.14318766}
-      scale: {x: 1, y: 1.0000001, z: 1}
-    - name: Arm.L.001
-      parentName: Arm.L
-      position: {x: -3.352761e-10, y: 0.009777701, z: 1.7229468e-10}
-      rotation: {x: -0.19849436, y: 0.40749282, z: -0.043183856, w: 0.89032847}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm.L.001_end
-      parentName: Arm.L.001
-      position: {x: -0, y: 0.01711423, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm.R
-      parentName: Spine
-      position: {x: 0.0052496684, y: 0.012649035, z: -7.9817636e-10}
-      rotation: {x: 0.31806818, y: -0.038151562, z: 0.93864447, w: -0.12776409}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm.R.001
-      parentName: Arm.R
-      position: {x: -2.9802322e-10, y: 0.0097777005, z: -7.45058e-10}
-      rotation: {x: -0.060820796, y: 0.9533467, z: -0.15059003, w: 0.2544672}
-      scale: {x: 1, y: 1, z: 0.99999994}
-    - name: Arm.R.001_end
-      parentName: Arm.R.001
-      position: {x: -0, y: 0.017114226, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Cube
-      parentName: GlucoseMonster(Clone)
-      position: {x: -0, y: 0, z: 0.035436034}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 100, y: 100, z: 100}
-    - name: Lamp
-      parentName: GlucoseMonster(Clone)
-      position: {x: -4.0762453, y: 5.903862, z: -1.005454}
-      rotation: {x: 0.52327543, y: -0.34203398, z: 0.72694236, w: 0.28416628}
-      scale: {x: 100.00001, y: 100, z: 100}
-    - name: Camera
-      parentName: GlucoseMonster(Clone)
-      position: {x: -7.4811316, y: 5.343665, z: 6.5076394}
-      rotation: {x: 0.0906284, y: 0.8937962, z: -0.20997299, w: 0.38577998}
-      scale: {x: 100, y: 100.00001, z: 99.99999}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -262,7 +147,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
