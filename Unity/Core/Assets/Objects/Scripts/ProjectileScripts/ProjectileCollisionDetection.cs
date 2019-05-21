@@ -36,7 +36,7 @@ public class ProjectileCollisionDetection : MonoBehaviour
                 Destroy(gameObject, 0);
             } catch (System.Exception e)
             {
-                //Nothin
+                Destroy(gameObject, 0);
             }
             
         }

@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 3479651448012314605}
   - component: {fileID: 2565214675422045415}
   - component: {fileID: 733783986498005548}
+  - component: {fileID: 553306185325352728}
   m_Layer: 0
   m_Name: GlucoseMonster
   m_TagString: Untagged
@@ -345,6 +346,25 @@ NavMeshAgent:
   m_BaseOffset: 0.14544302
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &553306185325352728
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025707898377928098}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 025716b813b6c3548bc57527c476e0a6, type: 3}
+  m_Controller: {fileID: 9100000, guid: 80bdd2abba5f77f49b91500387fdb487, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &685834618980065227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,7 +385,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
@@ -380,7 +400,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
@@ -390,7 +410,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
@@ -405,13 +425,23 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 025716b813b6c3548bc57527c476e0a6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 025716b813b6c3548bc57527c476e0a6,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 80bdd2abba5f77f49b91500387fdb487, type: 2}
+    - target: {fileID: -7780734103960978560, guid: 025716b813b6c3548bc57527c476e0a6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf73282ddb0e2eb4d8cabe4db4733d4e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 025716b813b6c3548bc57527c476e0a6, type: 3}
 --- !u!4 &5547913835599459537 stripped

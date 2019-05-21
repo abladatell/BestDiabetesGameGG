@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour {
 
@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour {
     Vector3 lookPos;
 
     Animator anim;
+    
 
     public Collider[] attackHitBoxes;
     public GameObject light;
     public GameObject gun;
+    public Joystick joystick;
     public int regularRangedDmg = 5;
     public int regularMeleeDmg = 5;
     int meleeDmg;
@@ -49,10 +51,33 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (Input.GetMouseButtonDown(1))
         {
             launchAttack(attackHitBoxes[0]);
         }
+
+    #if UNITY_ANDROID
+        if(joystick.Vertical.Equals(0) && joystick.Horizontal.Equals(0))
+        {
+            Debug.Log("Idle Triggered");
+            runningBool = false;
+            movementAnimation();
+        }
+
+        if (!joystick.Vertical.Equals(0) && !joystick.Horizontal.Equals(0))
+        {
+            Move();
+            if (runningBool == false)
+            {
+                runningBool = true;
+                movementAnimation();
+            }
+        }
+
+#elif UNITY_WEBGL || UNITY_STANDALONE_WIN
+
+        
         if (Input.GetKeyUp(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             runningBool = false;
@@ -73,6 +98,7 @@ public class PlayerController : MonoBehaviour {
             runningBool = false;
             movementAnimation();
         }
+       
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             Move();
@@ -82,6 +108,9 @@ public class PlayerController : MonoBehaviour {
                 movementAnimation();
             }
         }
+        
+#endif
+
         if (light.transform.localRotation.eulerAngles.y <= 135 && light.transform.localRotation.eulerAngles.y > 45)
         {
             aim = 0;
@@ -105,12 +134,22 @@ public class PlayerController : MonoBehaviour {
             aimAnimation(4);
         }
         checkHealth();
+
+
+
     }
+
     void Move()
     {
+    #if UNITY_ANDROID
+        Vector3 direction = new Vector3(joystick.Horizontal, 0, joystick.Vertical);
+        Vector3 rightMovement = right * moveSpeed * Time.deltaTime * joystick.Horizontal;
+        Vector3 upMovement = forward * moveSpeed * Time.deltaTime * joystick.Vertical;
+    #elif UNITY_WEBGL || UNITY_STANDALONE_WIN
         Vector3 direction = new Vector3(Input.GetAxis("HorizontalKey"), 0, Input.GetAxis("VerticalKey"));
         Vector3 rightMovement = right * moveSpeed * Time.deltaTime * Input.GetAxis("HorizontalKey");
         Vector3 upMovement = forward * moveSpeed * Time.deltaTime * Input.GetAxis("VerticalKey");
+    #endif
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
@@ -126,14 +165,6 @@ public class PlayerController : MonoBehaviour {
             moveSpeed = regularMoveSpeed;
             meleeDmg = regularMeleeDmg;
         }
-        else if (health > highSugarDeath)
-        {
-            gameOver();
-        }
-        else if (health < lowSugarDeath)
-        {
-            gameOver();
-        }
         else if (health < lowSugarLimit)
         {
             moveSpeed = lowSpeed;
@@ -146,12 +177,7 @@ public class PlayerController : MonoBehaviour {
         //Debug.Log("Health Checked");
     }
 
-    void gameOver()
-    {
-        Debug.Log("Player has died");
-        Destroy(gameObject, 0);
-        SceneManager.LoadScene("Anadi Stahp Breaking shit");
-    }
+   
 
     public void takeDamage(int damage)
     {
@@ -159,7 +185,7 @@ public class PlayerController : MonoBehaviour {
         health = health + damage;
     }
 
-    private void launchAttack(Collider col)
+    public void launchAttack(Collider col)
     {
         anim.SetTrigger("Attack");
         movementAnimation();

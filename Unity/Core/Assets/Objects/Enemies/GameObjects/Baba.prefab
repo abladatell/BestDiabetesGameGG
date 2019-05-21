@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6503547086369470459}
   - component: {fileID: 5301423095289005297}
   - component: {fileID: 2330029439417900217}
+  - component: {fileID: -4145408188973387505}
   m_Layer: 0
   m_Name: Baba
   m_TagString: Untagged
@@ -131,6 +132,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &-4145408188973387505
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831860864072965556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d8eb11f83c6cdba4b9933549a76844f8, type: 3}
+  m_Controller: {fileID: 9100000, guid: cafee4eadb23faf4e82309223a8bee20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5301423095073630439
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,22 +290,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectileSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: shootForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 3957314705361867245, guid: 42da2c2afe588044e96769be3d52ac28,
-        type: 3}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: moveForce
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3850149832334323915, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -346,6 +350,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: shootForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3957314705361867245, guid: 42da2c2afe588044e96769be3d52ac28,
+        type: 3}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: moveForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e63b2521ce2aac46ba97ffd5ef39237, type: 3}
 --- !u!4 &157853663144573120 stripped
@@ -373,11 +393,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5301423097127436523}
     m_Modifications:
-    - target: {fileID: 8443794202851675766, guid: ed5897383bc84c24caae4e4dbfa14c4a,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyCollider
-      objectReference: {fileID: 0}
     - target: {fileID: 8443794202851675767, guid: ed5897383bc84c24caae4e4dbfa14c4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -438,6 +453,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8443794202851675766, guid: ed5897383bc84c24caae4e4dbfa14c4a,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5897383bc84c24caae4e4dbfa14c4a, type: 3}
 --- !u!1001 &8895408609989910088
@@ -452,11 +472,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Alcohol Monster
       objectReference: {fileID: 0}
-    - target: {fileID: -7780734103960978560, guid: d8eb11f83c6cdba4b9933549a76844f8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4c8dd063ba65d534bafcfe70e38c4774, type: 2}
     - target: {fileID: -4216859302048453862, guid: d8eb11f83c6cdba4b9933549a76844f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -465,7 +480,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d8eb11f83c6cdba4b9933549a76844f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.54
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d8eb11f83c6cdba4b9933549a76844f8,
         type: 3}
@@ -512,6 +527,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d8eb11f83c6cdba4b9933549a76844f8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cafee4eadb23faf4e82309223a8bee20, type: 2}
+    - target: {fileID: -7780734103960978560, guid: d8eb11f83c6cdba4b9933549a76844f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4c8dd063ba65d534bafcfe70e38c4774, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8eb11f83c6cdba4b9933549a76844f8, type: 3}
 --- !u!4 &4469932369733743954 stripped

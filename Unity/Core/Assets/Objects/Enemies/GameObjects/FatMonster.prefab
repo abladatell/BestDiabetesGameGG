@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 57370241170134501}
   - component: {fileID: 1376021517137815279}
   - component: {fileID: 8853796621167574695}
+  - component: {fileID: 7818575803313121979}
   m_Layer: 0
   m_Name: FatMonster
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5837141739845304234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1376021519060099829}
@@ -253,6 +254,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &7818575803313121979
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5837141739845304234}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 9c0cdf6344af14b48a1a7a37ccc7a77b, type: 3}
+  m_Controller: {fileID: 9100000, guid: 74911a014b29c434ab1b38ffe57e6758, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3979742347326102158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -273,7 +293,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 9c0cdf6344af14b48a1a7a37ccc7a77b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 1.48
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9c0cdf6344af14b48a1a7a37ccc7a77b,
         type: 3}
@@ -335,6 +355,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 9c0cdf6344af14b48a1a7a37ccc7a77b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 74911a014b29c434ab1b38ffe57e6758, type: 2}
     - target: {fileID: -7780734103960978560, guid: 9c0cdf6344af14b48a1a7a37ccc7a77b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -359,27 +384,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProjectileSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: shootForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 8397001834735214217, guid: e66bda9bdf0734d4aade6b0198d7fd2f,
-        type: 3}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: moveForce
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
-        type: 3}
-      propertyPath: damage
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3850149832334323915, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
         type: 3}
@@ -439,6 +443,27 @@ PrefabInstance:
     - target: {fileID: 3850149832334323919, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: shootForce
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 8397001834735214217, guid: e66bda9bdf0734d4aade6b0198d7fd2f,
+        type: 3}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: moveForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850149832334323917, guid: 7e63b2521ce2aac46ba97ffd5ef39237,
+        type: 3}
+      propertyPath: damage
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

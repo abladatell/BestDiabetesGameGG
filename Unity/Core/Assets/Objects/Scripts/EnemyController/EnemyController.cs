@@ -38,6 +38,7 @@ public class EnemyController : MonoBehaviour
         health = health - damage;
         if (health <= 0)
         {
+            anime.SetBool("die", true);
             Debug.Log("Enemy is dead");
             Destroy(gameObject, 0);
         }
@@ -53,6 +54,7 @@ public class EnemyController : MonoBehaviour
             {
                 
                 nav.SetDestination(player.transform.position);
+                anime.SetBool("attack", true);
                 
                 if (isRanged)
                 {
@@ -67,6 +69,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             attack(false);
+            anime.SetBool("attack", false);
         }
     }
 
@@ -94,7 +97,6 @@ public class EnemyController : MonoBehaviour
             var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
             foreach (Collider c in cols)
             {
-                Debug.Log(c.gameObject.name);
                 if (c.transform.parent.parent == transform)
                 {
                     continue;

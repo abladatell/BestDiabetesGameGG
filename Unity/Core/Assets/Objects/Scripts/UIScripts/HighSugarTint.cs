@@ -25,7 +25,7 @@ public class HighSugarTint : MonoBehaviour
                 tempColor.r = 0.65f;
                 tempColor.g = 0.08f;
                 tempColor.b = 0.08f;
-                tempColor.a = 0.75f - (float)pC.health/100;
+                tempColor.a = 0.5f - (float)pC.health/100;
                 image.color = tempColor;
             }
             else if (pC.health >= 150)
