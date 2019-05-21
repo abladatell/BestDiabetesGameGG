@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <title>web-dev</title>
+
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script> let unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});</script>
+</head>
+
+<body>
+    <noscript>
+        <strong>We're sorry but web-dev doesn't work properly without JavaScript enabled. Please enable it to
+            continue.</strong>
+    </noscript>
+    
+    <div id="app"></div>
+    <div id="particles-js" style="position:absolute;margin: -100%;width:180vw;height:285vh;z-index: -2;"></div>
+    <script src="particles.min.js"></script>
+    <script>particlesJS.load('particles-js', 'particles.json');</script>
+
+</body>
+
+</html>
