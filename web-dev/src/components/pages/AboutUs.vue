@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>About Us</h1>
+        <h1>About Us</h1><br>
 
         <div id="centeredDiv">
             <img src="Team.jpg">
@@ -84,5 +84,19 @@ canvas {
     background: white;
     color: black;
     padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    #centeredDiv {
+        margin: 0 auto;
+        width: 95%;
+        text-align: center;
+        background: white;
+        color: black;
+        padding-bottom: 10px;
+    }
+    img {
+        width: 95%;
+    }
 }
 </style>

@@ -58,7 +58,7 @@ li {
     font-size: 120%;
 }
 
-@media only screen and (max-width: px) {
+@media only screen and (max-width: 900px) {
     div {
         width: 95%;
         margin: auto;

@@ -21,6 +21,7 @@ export default {
     destroyed() {
         let e = document.querySelector("#particles-js");
         e.style.display = "block";
+        location.reload();
     },
     methods: {
         reload() {
