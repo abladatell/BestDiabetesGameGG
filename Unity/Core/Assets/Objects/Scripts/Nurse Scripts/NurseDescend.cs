@@ -12,7 +12,6 @@ public class NurseDescend : MonoBehaviour
     float nurseZ;
     Animator anim;
     float timer = 0f;
-    bool text = true;
     public Text txt;
 
     // Start is called before the first frame update
@@ -37,7 +36,7 @@ public class NurseDescend : MonoBehaviour
             Quaternion target = Quaternion.Euler(0, 270, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * 5.0f);
         }
-        else if (timer > 12 && text == false)
+        else if (timer > 12)
         {
             SceneManager.LoadScene("EndCredits", LoadSceneMode.Single);
         }
