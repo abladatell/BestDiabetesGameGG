@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BossEyeController : MonoBehaviour
 {
@@ -22,24 +25,37 @@ public class BossEyeController : MonoBehaviour
     public ProjectileSpawner gunLeft;
     public ProjectileSpawner gunRight;
     public ProjectileSpawner gunBack;
-    //Private variables that can't be changed
+    public GameObject Nurse;
+    
+    //Stage and where the boss is in the room.
     private int currentStage = 0;
     private float xPosition;
     private float zPosition;
-    //Assumeing that the boss starts in the middle of the room
+    //Assumes that boss is centered at start
     private float xArenaPosition;
     private float zArenaPosition;
+    // Destination to head to using NavMeshAgent
     private Vector3 destination;
     private bool slidingLeft = false;
     private bool slidingRight = false;
+    // Time elapsed in current stage
     private float timeElapsed = 0f;
+    // The time for current stage
     private float timer = 0f;
+    // the NavMeshAgent is for moving around the room.
     private NavMeshAgent nav;
+    // Player's position for stages where boss is targeting player's position
     private Vector3 playerPos;
+    // If the monster is moving then it wont change destination mid trip.
     private bool moving = false;
-    private GameObject player;
+    // The player GameObject
+    public GameObject player;
+    // Script for starting the credit
+    public CreditScript creditScript;
+    public string userName = "DefaultUser";
 
-
+    public Text txt;
+    // At start will get all the nessesary componenets and make the appropriate calculations for movement.
     void Start()
     {
         health = maxHealth;
@@ -52,14 +68,16 @@ public class BossEyeController : MonoBehaviour
         destination = this.transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         playerPos = player.transform.position;
+        userName = userNameRememberer.FindObjectOfType<userNameRememberer>().userName;
     }
-
 
     void FixedUpdate()
     {
+        // Auto setting the player object 
         player = GameObject.FindGameObjectWithTag("Player");
         playerPos = player.transform.position;
         timeElapsed += Time.deltaTime;
+        // switches the timer based on which stage is currently selected
         switch (currentStage)
         {
             case 0:
@@ -72,28 +90,45 @@ public class BossEyeController : MonoBehaviour
                 timer = stageTransitionThree;
                 break;
             default:
-                Debug.Log("FuckyWucky in the TimeyWimey");
+                Debug.Log("Not a valid stage");
                 break;
         }
+        // Change stages and resets timer if true
         if(timeElapsed > timer)
         {
             timeElapsed = 0;
-            currentStage = Random.Range(0, 3);
-            Debug.Log("Changing stage to: " + currentStage);
+            currentStage = UnityEngine.Random.Range(0, 3);
         }
+        //Changes movement and attack patterns to current stage.
         Stage(currentStage);
-
+        // Set destination to the what the stage tells it to.
         nav.SetDestination(destination);
+        // Zero damage to check health is above 0
+        takeDamage(0);
         
     }
 
+    // Called for taking damage. Will check health and if 0 or less, will send completion data to firebase and kill the boss.
     public void takeDamage(int damage)
     {
         health = health - damage;
         if (health <= 0)
         {
+            
+            Save save = new Save();
+            if(userName != "DefaultUser")
+            {
+                save.save("UserRecords\\" + userName, "{ \"lowSugarTime\" : \"" + player.GetComponent<PlayerController>().lowSugarTime.ToString() + "\"," +
+                "\"highSugarTime\" : \"" + player.GetComponent<PlayerController>().highSugarTime.ToString() + "\"," +
+                "\"insulinUsed\" : \"" + player.GetComponent<PlayerController>().insulinUsed.ToString() + "\"," +
+                "\"Date\" : \"" + DateTime.Now.ToString() + "\"}");
+            }
             Debug.Log("Eye Boss is dead");
-            Destroy(gameObject, 0);
+            Instantiate(Nurse, new Vector3(playerPos.x + 5, 10, playerPos.z), Quaternion.identity);
+            Color color = txt.color;
+            color.a = 1.0f;
+            txt.color = color;
+            Destroy(gameObject);
         }
     }
 
@@ -138,10 +173,10 @@ public class BossEyeController : MonoBehaviour
                 this.transform.LookAt(playerPos);
                 attackPattern(1);
                 break;
+            // Jumping between walls
             case 2:
                 attackPattern(2);
-                int wall = Random.Range(0, 4);
-                Debug.Log("Going to wall: " + wall);
+                int wall = UnityEngine.Random.Range(0, 4);
                 switch (wall)
                 {
                     //North Wall
@@ -191,16 +226,17 @@ public class BossEyeController : MonoBehaviour
                         }
                         break;
                     default:
-                        Debug.Log("UWU I MADE A CUMY WUMY ON THE WALLY UWU");
+                        Debug.Log("Not a valid Wall jump");
                         break;
                 }
                 break;
             default:
-                Debug.Log("UHOH, I MADE A FUCKY WUCKY");
+                Debug.Log("Not a valid stage");
                 break;
         }
     }
 
+    // Sets the attack pattern. Controls the projectile shooters, and their firerate.
     void attackPattern(int attackNo)
     {
         /**     Copy the following layout to change gun properties in each stage.

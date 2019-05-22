@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Anadi is actually really nice UI.unity
     guid: 2c82115023564614cb7944c5c6846cc7
   - enabled: 1
+    path: Assets/Scenes/Anadi might be okay I guess.unity
+    guid: 28457ea6c11ff83479099eb25ab997b1
+  - enabled: 1
     path: Assets/Scenes/Anadi Stahp Breaking shit.unity
     guid: 78f843dc17727ea46a98db4e80f8d4fe
+  - enabled: 1
+    path: Assets/Scenes/EndCredits.unity
+    guid: 4e6466b9a4a74c442ae430125dac3d75
   m_configObjects: {}

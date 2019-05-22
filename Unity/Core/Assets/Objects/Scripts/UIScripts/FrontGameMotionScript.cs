@@ -13,12 +13,14 @@ public class FrontGameMotionScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //Gets the text component from the GameObject
         textComp = GetComponent<Text>();
         message = textComp.text;
         textComp.text = "";
         StartCoroutine(TypeText());
     }
 
+    // Front Text animation, adds letter based on a delay.
     IEnumerator TypeText()
     {
         foreach (char letter in message.ToCharArray())

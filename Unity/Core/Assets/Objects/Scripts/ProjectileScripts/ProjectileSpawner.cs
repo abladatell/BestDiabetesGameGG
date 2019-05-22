@@ -21,6 +21,7 @@ public class ProjectileSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Grabbing componenets for later use.
         rbody = GetComponent<Rigidbody>();
         bulletSound = GetComponent<AudioSource>();
     }
@@ -28,26 +29,34 @@ public class ProjectileSpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        // Player inputs
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
 
         rbody.velocity = new Vector3(h, v, 0);
 
+        // If it is the player then it needs to be activated. Will target and shoot to where the mouse is.
+
+#if UNITY_STANDALONE_WIN || UNITY_WEBGL
+
         if (isPlayer && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Mouse0))) {
             Target();
             Shoot();
         }
-
+#endif
+        // If the AI is triggered it will shoot straight forward.
         if (isAggro)
         {
             Shoot();
         }
 
+        // Time between shots
         timeElapsed += Time.deltaTime;
     }
 
-    void Target()
+    // Targets to where the mouse position is in the gameworld.
+    public void Target()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -64,7 +73,8 @@ public class ProjectileSpawner : MonoBehaviour
         transform.LookAt(transform.position + lookDir, Vector3.up);
     }
 
-    void Shoot()
+    // Shoots a projectile at the determined firerate.
+    public void Shoot()
     {
         if (timeElapsed > shootRate)
         {
@@ -86,16 +96,19 @@ public class ProjectileSpawner : MonoBehaviour
         }
     }
 
+    // For AI to shoot this needs to be called true
     public void setAggro(bool aggro)
     {
         isAggro = aggro;
     }
 
+    // Allows for changing the fire rate of a projectile spawner.
     public void setFireRate(float newFireRate)
     {
         shootRate = newFireRate;
     }
 
+    // Sets the damage of the projectiles spawned.
     public void setDamage(int newDamage)
     {
         damage = newDamage;

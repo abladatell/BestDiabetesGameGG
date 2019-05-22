@@ -156,7 +156,7 @@ ModelImporter:
       takeName: Armature|LampAction
       internalID: 6869276295973601976
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 1.5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -243,7 +243,7 @@ ModelImporter:
       takeName: Armature|water attack.001
       internalID: -7400794243380963536
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 1.4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -301,7 +301,7 @@ ModelImporter:
       takeName: Armature|water movement
       internalID: -7663050672134778949
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 1.6000001
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -330,7 +330,7 @@ ModelImporter:
       takeName: Armature|water movement.001
       internalID: 4827894032992040673
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 1.6000001
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

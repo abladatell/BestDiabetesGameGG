@@ -25,7 +25,7 @@ public class GameOverManager : MonoBehaviour
             restartTimer += Time.deltaTime;
             if (restartTimer >= restartDelay)
             {
-                SceneManager.LoadScene("Anadi is actually really nice UI");
+                SceneManager.LoadScene("Anadi Stahp Breaking shit");
             }
         }
 

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class FrontScreenBGAudioScript : MonoBehaviour
 {
+
     AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        //Instantiate audioSource from GameObject
         audioSource = GetComponent<AudioSource>();
-        audioSource.time = 2.5f;   // assuming that you already have reference to your AudioSource
+        audioSource.time = 2.5f;   // Sets 
         audioSource.Play();
     }
 

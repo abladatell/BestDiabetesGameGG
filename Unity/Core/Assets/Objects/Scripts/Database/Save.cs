@@ -7,7 +7,9 @@ using SimpleFirebaseUnity.MiniJSON;
 
 public class Save : MonoBehaviour
 {
-
+    const string userName  = "DefaultUser";
+    
+    // creates the save, will save jsonItems to the branch.
     public void save(string branch, string jsonItem)
     {
         Firebase firebase = Firebase.CreateNew("https://bestdiabetesgamegg.firebaseio.com");
@@ -22,6 +24,7 @@ public class Save : MonoBehaviour
         
     }
 
+    // Creates test save data to test connectivity.
     public void save()
     {
         Firebase firebase = Firebase.CreateNew("https://bestdiabetesgamegg.firebaseio.com");

@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
+    //Boolean which checks paused.
     public bool paused;
+
     // Start is called before the first frame update
     void Start()
     {
         paused = false;   
     }
 
-    // Update is called once per frame
+    //Checks for pause, if not pause make it paused.
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

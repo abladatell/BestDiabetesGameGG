@@ -7,6 +7,7 @@ public class PlayerAnimator : MonoBehaviour
     Animator animator;
     AnimatorOverrideController overrideController;
 
+    //Controls animations.
     void Start()
     {
         animator = GetComponentInChildren<Animator>();

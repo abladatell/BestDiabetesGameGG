@@ -6,14 +6,9 @@ public class ProjectileDespawner : MonoBehaviour
 {
 
     public float expiryTime = 0f;
-    // Start is called before the first frame update
+    // From time of creation, will despawn once expiry time has been reached.
     void Start()
     {
         Destroy(gameObject, expiryTime);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExitScript : MonoBehaviour
 {
+    //Quits the game when the method is called.
     public void QuitGame()
     {
         Application.Quit();

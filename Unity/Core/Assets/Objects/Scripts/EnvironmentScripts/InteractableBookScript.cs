@@ -7,13 +7,18 @@ public class InteractableBookScript : MonoBehaviour
 {
     public Image image;
 
-    
-    private void OnTriggerEnter(Collider other)
+    //Brings up the image on the screen if player is in collision range
+    private void OnTriggerStay(Collider other)
     {
-        var tempColor = image.color;
-        tempColor.a = 1.0f;
-        image.color = tempColor;
+        if (other.gameObject.name == "BodyCollider")
+        {
+            var tempColor = image.color;
+            tempColor.a = 1.0f;
+            image.color = tempColor;
+        }
     }
+
+    //Takes down the image on the screen if player is out of collision range
     private void OnTriggerExit(Collider other)
     {
         var tempColor = image.color;

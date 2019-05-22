@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3957314705361867245}
   bulletCollider: {fileID: 4976942919781033284}
-  damage: 10
+  damage: -10
   playerCollider: {fileID: 831860864072965556, guid: 19be0e3c5ee003c4ababa836b405194a,
     type: 3}
 --- !u!1 &7771637215027080215

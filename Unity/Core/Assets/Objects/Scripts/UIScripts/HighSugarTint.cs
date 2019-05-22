@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HighSugarTint : MonoBehaviour
 {
+
     public PlayerController pC;
     public Image image;
     // Start is called before the first frame update
@@ -19,16 +20,16 @@ public class HighSugarTint : MonoBehaviour
     {
         try
         {
-            if (pC.health <= 50)
+            if (pC.health <= 60)
             {
                 var tempColor = image.color;
                 tempColor.r = 0.65f;
                 tempColor.g = 0.08f;
                 tempColor.b = 0.08f;
-                tempColor.a = 0.5f - (float)pC.health/100;
+                tempColor.a = 0.6f - (float)pC.health/100;
                 image.color = tempColor;
             }
-            else if (pC.health >= 150)
+            else if (pC.health >= 140)
             {
                 var tempColor = image.color;
                 tempColor.r = 0.615f;

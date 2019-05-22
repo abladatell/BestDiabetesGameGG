@@ -9,34 +9,29 @@ public class ProjectileCollisionDetection : MonoBehaviour
     public int damage = 0;
     public GameObject playerCollider;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Fixed Update
     void FixedUpdate()
     {
+        // Checks to see if anything is colliding with the collider.
         var col = bulletCollider;
         var cols = Physics.OverlapBox(col.bounds.center, col.bounds.extents, col.transform.rotation, LayerMask.GetMask("HitBox"));
+        // If there is a collider, determins if it takes damage or if the projectile needs to despawn.
         foreach (Collider c in cols)
         {
             try
             {
+                // if the collision is from the thing that spawned the projectile, pass through it.
                 if (c.transform.parent.parent.name == playerCollider.name)
                 {
                     continue;
                 }
-                if (c.transform.parent.parent == transform)
-                {
-                    Destroy(gameObject, 0);
-                }
-                c.SendMessageUpwards("takeDamage", damage);
-                Destroy(gameObject, 0);
+                //sends damage to the owner of the collid4
+                    c.SendMessageUpwards("takeDamage", damage);
+                    Destroy(gameObject, 0.05f);
             } catch (System.Exception e)
             {
-                Destroy(gameObject, 0);
+                // If an error occures, get rid of the projectile.
+                Destroy(gameObject, 0.05f);
             }
             
         }
