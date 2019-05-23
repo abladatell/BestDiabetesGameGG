@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Anadi is not nice.unity
-  isLoaded: 1
-  isActive: 1
+- path: Assets/Scenes/Anadi Stahp Breaking shit.unity
+  isLoaded: 0
+  isActive: 0
   isSubScene: 0
